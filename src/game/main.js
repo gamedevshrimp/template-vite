@@ -3,6 +3,8 @@ import { Game as MainGame } from './scenes/Game';
 import { Preloader } from './scenes/Preloader';
 import { AUTO, Game } from 'phaser';
 
+import { SpinePlugin } from '@esotericsoftware/spine-phaser';
+
 export const config = {
 	type: Phaser.WEBGL,
 	width: 1024,
@@ -19,6 +21,15 @@ export const config = {
 	},
 	scene: [Preloader, MainGame, BaseScene],
 	resolution: 1,
+	plugins: {
+		scene: [
+			{
+				key: 'spine.SpinePlugin',
+				plugin: spine.SpinePlugin,
+				mapping: 'spine',
+			},
+		],
+	},
 };
 
 const StartGame = (parent) => {

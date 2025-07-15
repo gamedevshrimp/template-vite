@@ -7,5 +7,14 @@ export class Game extends BaseScene {
 	}
 	preload() {}
 
-	create() {}
+	create() {
+		const spineBee = this.add.spine(
+			this.game.config.width / 2,
+			this.game.config.height / 2,
+			'bee-data',
+			'bee-atlas',
+		);
+
+		spineBee.animationState.setAnimation(0, 'happy', true);
+	}
 }

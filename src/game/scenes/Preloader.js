@@ -7,7 +7,10 @@ export class Preloader extends BaseScene {
 
 	init() {}
 
-	preload() {}
+	preload() {
+		this.load.spineJson('bee-data', 'assets/spine/fisherman_cat.json');
+		this.load.spineAtlas('bee-atlas', 'assets/spine/fisherman_cat.atlas');
+	}
 
 	create() {
 		this.scene.start('Game');
